@@ -16,7 +16,7 @@ public class Rodada {
         return numero;
     }
 
-    public void adicionarPartida(Partida p) {
+    public void adicionaPartida(Partida p) {
         partidas.add(p);
     }
 

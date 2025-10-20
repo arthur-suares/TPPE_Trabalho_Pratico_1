@@ -46,7 +46,6 @@ public class Partida {
         return String.format("%s %d  X  %d %s", time_da_casa, gols_da_casa, gols_do_visitante, time_visitante);
     }
 
-    
 
     
     
