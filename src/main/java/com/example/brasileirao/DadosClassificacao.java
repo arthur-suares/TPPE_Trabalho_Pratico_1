@@ -96,7 +96,7 @@ public class DadosClassificacao implements Comparable<DadosClassificacao>{
             .toString();
     }
 
-    public void adicionarResultadoPartida(int golsSofridos, int golsMarcados)
+    public void adicionarResultadoPartida(int golsMarcados, int golsSofridos)
     {
         if(golsMarcados < 0 || golsSofridos < 0)
             throw new IllegalArgumentException("Não podem ser informados valores negativos!\n");

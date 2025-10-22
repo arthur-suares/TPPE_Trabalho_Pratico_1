@@ -1,17 +1,15 @@
-package src.test.java.com.example.brasileirao;
+package com.example.brasileirao;
 
-import org.junit.jupiter.api.Test;
-
-import com.example.brasileirao.Cronograma;
-import com.example.brasileirao.Partida;
-import com.example.brasileirao.Rodada;
-import com.example.brasileirao.Time;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.*;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
+@Category(Funcional.class)
 public class TesteCronograma {
 
     // 1.Criar um time
@@ -68,7 +66,7 @@ public class TesteCronograma {
             assertEquals(10, rodada.getPartidas().size());
             for (Partida partida : rodada.getPartidas()) {
                 String chave = partida.getTime_da_casa().getNome() + "->" + partida.getTime_visitante().getNome();
-                assertFalse(jogosVistos.contains(chave), "Partida duplicada: " + chave);
+                assertFalse(jogosVistos.contains(chave));
                 jogosVistos.add(chave);
             }
         }
@@ -83,7 +81,7 @@ public class TesteCronograma {
         }
 
         for (int quantidade : paresSemOrdem.values()) {
-            assertEquals(2, quantidade, "Cada par de times deve jogar exatamente 2 vezes (casa e fora)");
+            assertEquals(2, quantidade);
         }
     }
 }

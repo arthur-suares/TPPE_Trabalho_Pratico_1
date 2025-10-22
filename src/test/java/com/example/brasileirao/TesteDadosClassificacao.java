@@ -1,13 +1,15 @@
-package src.test.java.com.example.brasileirao;
+package com.example.brasileirao;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.*;
-import com.example.brasileirao.*;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
+@Category(Funcional.class)
 public class TesteDadosClassificacao {
 
     @Test
@@ -26,9 +28,9 @@ public class TesteDadosClassificacao {
         // verificando se a tabela contém a quantidade correta de times
         List<DadosClassificacao> classificacao = tabela.getTabelaClassificacao();
 
-        assertNotNull(classificacao, "A tabela de classificação não deve ser nula");
-        assertEquals(3, classificacao.size(), "A tabela deve conter o mesmo número de times fornecidos");
-        assertTrue(classificacao.stream().anyMatch(d -> d.getTime().equals(time1)), "A tabela deve conter o time Palmeiras");
+        assertNotNull(classificacao);
+        assertEquals(3, classificacao.size());
+        assertTrue(classificacao.stream().anyMatch(d -> d.getTime().equals(time1)));
 
     }
 
