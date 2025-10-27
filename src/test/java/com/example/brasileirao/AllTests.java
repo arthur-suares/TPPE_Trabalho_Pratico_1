@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ SteFuncional.class})
+@SuiteClasses({ SteFuncional.class, SteExcecao.class})
 public class AllTests {
     
 }
