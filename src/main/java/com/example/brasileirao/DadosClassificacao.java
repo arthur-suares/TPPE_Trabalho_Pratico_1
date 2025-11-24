@@ -33,6 +33,24 @@ public class DadosClassificacao implements Comparable<DadosClassificacao>{
         return vitorias;
     }
 
+    //método para alterar valores dos atributos
+    void adicionarGolsMarcados(int valor) {
+        this.golsMarcados += valor;
+    }
+
+    void adicionarGolsSofridos(int valor) {
+        this.golsSofridos += valor;
+    }
+
+    void adicionarVitoria() {
+        this.vitorias++;
+    }
+
+    void adicionarPontos(int valor) {
+        this.pontos += valor;
+    }
+
+
     //método para calcular o resultado de uma partida
     public void calculaResultadoPartida(int golsM, int golsS){
         if(golsS == golsM){
@@ -98,21 +116,8 @@ public class DadosClassificacao implements Comparable<DadosClassificacao>{
 
     public void adicionarResultadoPartida(int golsMarcados, int golsSofridos)
     {
-        if(golsMarcados < 0 || golsSofridos < 0)
-            throw new IllegalArgumentException("Não podem ser informados valores negativos!\n");
-        
-        this.golsMarcados += golsMarcados;
-        this.golsSofridos += golsSofridos;
+        ResultadoPartida resultadoPartida = new ResultadoPartida(this, golsMarcados, golsSofridos);
+        resultadoPartida.computePontos();
 
-        if(golsSofridos < golsMarcados)
-        {
-            vitorias++;
-            pontos += 3;
-        }
-
-        else if(golsMarcados == golsSofridos)
-        {
-            pontos += 1;
-        }
     }
 }
