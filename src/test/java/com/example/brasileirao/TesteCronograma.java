@@ -24,7 +24,7 @@ public class TesteCronograma {
     public void deveCriarPartidaComTimeCasaEFora() {
         Time time_da_casa = new Time("Flamengo");
         Time time_de_fora = new Time("Palmeiras");
-        Partida partida = new Partida(time_da_casa, time_de_fora, 2, 1);
+        Partida partida = new Partida(time_da_casa, time_de_fora, new Placar(2, 1));
 
         assertEquals(time_da_casa, partida.getTime_da_casa());
         assertEquals(time_de_fora, partida.getTime_visitante());
@@ -34,7 +34,7 @@ public class TesteCronograma {
     @Test
     public void deveCriarRodada() {
         Rodada rodada = new Rodada(1);
-        Partida partida = new Partida(new Time("A"), new Time("B"), 2, 1);
+        Partida partida = new Partida(new Time("A"), new Time("B"), new Placar(2, 1));
         rodada.adicionaPartida(partida);
 
         assertEquals(1, rodada.getPartidas().size());

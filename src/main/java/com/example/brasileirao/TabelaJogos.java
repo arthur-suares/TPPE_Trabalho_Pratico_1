@@ -25,8 +25,10 @@ public class TabelaJogos {
             if(time_da_casa == null || time_visitante == null)
                 throw new IllegalArgumentException("Não foi possível identificar quais times estão na partida");
 
-            time_da_casa.adicionarResultadoPartida(p.getGols_da_casa(), p.getGols_do_visitante());
-            time_visitante.adicionarResultadoPartida(p.getGols_do_visitante(), p.getGols_da_casa());
+            Placar placar = p.getPlacar();
+
+            time_da_casa.adicionarResultadoPartida(placar.getGols_da_casa(), placar.getGols_do_visitante());
+            time_visitante.adicionarResultadoPartida(placar.getGols_do_visitante(), placar.getGols_da_casa());
         }
     }
 

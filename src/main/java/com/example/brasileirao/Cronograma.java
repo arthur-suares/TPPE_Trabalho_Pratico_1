@@ -50,9 +50,9 @@ public class Cronograma{
                 time2 = timesEmRotacao.get((qtd - 2 - (j - 1) + ajuste) % (qtd - 1));
 
                 if (i % 2 == 0) {
-                    rodada.adicionaPartida(new Partida(time1, time2, 0, 0));
+                    rodada.adicionaPartida(new Partida(time1, time2, new Placar(0, 0)));
                 } else {
-                    rodada.adicionaPartida(new Partida(time2, time1, 0, 0));
+                    rodada.adicionaPartida(new Partida(time1, time2, new Placar(0, 0)));
                 }
             }
 
@@ -73,7 +73,7 @@ public class Cronograma{
 
             List<Partida> partidasAnteriores = anterior.getPartidas();
             for (Partida p : partidasAnteriores) {
-                rodada.adicionaPartida(new Partida(p.getTime_visitante(), p.getTime_da_casa(), 0, 0));
+                rodada.adicionaPartida(new Partida(p.getTime_visitante(), p.getTime_da_casa(), new Placar(0, 0)));
             }
 
             retorno.add(rodada);
