@@ -3,3 +3,4 @@
 /target/maven-status
 /target/classes
 /target/test-classes
+/target/surefire-reports
