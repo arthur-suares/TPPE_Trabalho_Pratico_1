@@ -46,10 +46,10 @@ public class TesteDadosClassificacao {
         Rodada rodada = new Rodada(1);
 
         // Palmeiras vence o Flamengo
-        Partida p1 = new Partida(palmeiras, flamengo, 2, 0);
+        Partida p1 = new Partida(palmeiras, flamengo, new Placar(2, 0));
 
         // Corinthians empata com São Paulo
-        Partida p2 = new Partida(corinthians, saoPaulo, 1, 1);
+        Partida p2 = new Partida(corinthians, saoPaulo, new Placar(1, 1));
 
         rodada.adicionaPartida(p1);
         rodada.adicionaPartida(p2);

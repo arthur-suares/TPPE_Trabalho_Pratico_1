@@ -8,20 +8,20 @@ public class TestePartidaInvalida {
     //Teste para time da casa nulo
     @Test(expected = IllegalArgumentException.class)
     public void deveLancarExcecaoSeTimeDaCasaNulo(){
-        new Partida(null, new Time("time2"), 0, 0);
+        new Partida(null, new Time("time2"), new Placar(0, 0));
     }
 
     //Teste para times iguais na partida
     @Test(expected = IllegalArgumentException.class)
     public void deveLancarExcecaoSeTimesSaoIguais(){
         Time time = new Time("timeLegal");
-        new Partida(time, time, 0, 0);
+        new Partida(time, time, new Placar(0, 0));
     }
 
     //Teste para gols negativos
     @Test(expected = IllegalArgumentException.class)
     public void deveLancarExcecaoSeGolsDaCasaNegativo(){
-        new Partida(new Time("time1"), new Time("time2"), -1, 0);
+        new Partida(new Time("time1"), new Time("time2"), new Placar(-1, 0));
     }
 
 }
